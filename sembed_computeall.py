@@ -16,6 +16,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 
 negative_embeds = []
 positive_embeds = []
+'''
 counter1 = 0
 for p in Path('./aclimdb/train/neg').glob('*.txt'):
     print("counter at " , counter1)
@@ -48,13 +49,13 @@ for p in Path('./aclimdb/train/pos').glob('*.txt'):
         counter2 += 1
         file1.close()
         continue
-'''
+
 #print(negative_embeds, "neg")
-print(len(negative_embeds))
+print(len(positive_embeds))
 #convert all to tensors
 #print(positive_embeds, "pos")
-negtensor = tf.convert_to_tensor(negative_embeds, dtype=tf.float32)
-#postensor = tf.convert_to_tensor(negative_embeds, dtype=tf.float32)
+#negtensor = tf.convert_to_tensor(negative_embeds, dtype=tf.float32)
+postensor = tf.convert_to_tensor(positive_embeds, dtype=tf.float32)
 
-tf.io.write_file("negtensor.txt", tf.io.serialize_tensor(negtensor))
-#tf.io.write_file("postensor.txt", tf.io.serialize_tensor(postensor))
+#tf.io.write_file("negtensor.txt", tf.io.serialize_tensor(negtensor))
+tf.io.write_file("postensor.txt", tf.io.serialize_tensor(postensor))
