@@ -10,12 +10,12 @@ def random_mix(postensor, negtensor, data, label):
         rn = random.random()
         if len(postensor) == 0:
             length = len(negtensor)
-            label += [1 for i in range(length)]
+            label += [-1 for i in range(length)]
             data += negtensor
             break;
         if len(negtensor) == 0:
             length = len(postensor)
-            label += [-1 for i in range(length)]
+            label += [1 for i in range(length)]
             data += postensor
             break;
         if rn > 0.5:
