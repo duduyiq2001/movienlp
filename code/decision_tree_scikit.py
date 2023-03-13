@@ -1,14 +1,6 @@
 import tensorflow as tf
 
 import numpy as np
-# import matplotlib.pyplot as plt
-
-import requests                                      # reading data
-from io import StringIO
-
-from sklearn.datasets import fetch_openml            # common data set access
-from sklearn.preprocessing import StandardScaler     # scaling transform
-from sklearn.model_selection import train_test_split # validation tools
 from sklearn.metrics import zero_one_loss as J01
 
 import sklearn.tree as tree
@@ -20,8 +12,8 @@ from joblib import dump, load
 seed = 1234
 np.random.seed(seed)  
 
-inputdata = tf.io.parse_tensor(tf.io.read_file(r"C:\Users\micha\Desktop\movienlp\code\mixedinput1.txt"),out_type=tf.float32)
-inputlabel = tf.io.parse_tensor(tf.io.read_file(r"C:\Users\micha\Desktop\movienlp\code\inputlabel1.txt"),out_type=tf.float32)
+inputdata = tf.io.parse_tensor(tf.io.read_file("mixedinput1.txt"),out_type=tf.float32)
+inputlabel = tf.io.parse_tensor(tf.io.read_file("inputlabel1.txt"),out_type=tf.float32)
 inputlabel1 = [1 if a == 1 else 0 for a in inputlabel]
 inputlabel1 = tf.convert_to_tensor(inputlabel1, dtype=tf.int32)
 val_size = int(0.2*len(inputdata))
