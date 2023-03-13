@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dropout
 from tensorflow.keras.callbacks import EarlyStopping
 import pandas as pd
 
@@ -12,6 +13,7 @@ tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 NNmodel = Sequential()
 NNmodel.add(Dense(500, activation = 'relu'))
+NNmodel.add(Dropout(rate = 0.2))
 NNmodel.add(Dense(400, activation = 'relu'))
 NNmodel.add(Dense(300, activation = 'relu'))
 NNmodel.add(Dense(200, activation = 'relu'))
@@ -34,12 +36,12 @@ Ytr = inputlabel1[val_size:]
 
 early_stop_callback = EarlyStopping(
     monitor='val_loss',
-    patience=2,
+    patience=4,
     restore_best_weights=True
 )
 
 
-NNmodel.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback], epochs = 5,batch_size = 32)
+NNmodel.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback], epochs = 1,batch_size = 32)
 NNmodel.summary()
 for i, loss in enumerate(NNmodel.history.history['loss']):
     print(f"Epoch {i}: Training loss = {loss}")
@@ -50,6 +52,6 @@ for i, loss in enumerate(NNmodel.history.history['loss']):
 #model.evaluate(test_ds)
 
 # Export the model to a SavedModel.
-NNmodel.save("NN_1000_32")
+NNmodel.save("NN_withdropout")
 
 print(NNmodel.predict(inputdata[0:20]))
