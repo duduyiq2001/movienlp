@@ -1,9 +1,10 @@
 import tensorflow as tf
 import numpy as np
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.callbacks import EarlyStopping
+import pandas as pd
 
 
 physical_devices = tf.config.list_physical_devices('GPU')
@@ -33,18 +34,22 @@ Ytr = inputlabel1[val_size:]
 
 early_stop_callback = EarlyStopping(
     monitor='val_loss',
-    patience=10,
+    patience=2,
     restore_best_weights=True
 )
 
 
-NNmodel.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback])
+NNmodel.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback], epochs = 5,batch_size = 32)
 NNmodel.summary()
+for i, loss in enumerate(NNmodel.history.history['loss']):
+    print(f"Epoch {i}: Training loss = {loss}")
+
+
 
 # Evaluate the model.
 #model.evaluate(test_ds)
 
 # Export the model to a SavedModel.
-NNmodel.save("NN")
+NNmodel.save("NN_1000_32")
 
 print(NNmodel.predict(inputdata[0:20]))
