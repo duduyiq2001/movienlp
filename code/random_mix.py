@@ -10,7 +10,7 @@ def random_mix(postensor, negtensor, data, label):
         rn = random.random()
         if len(postensor) == 0:
             length = len(negtensor)
-            label += [-1 for i in range(length)]
+            label += [0 for i in range(length)]
             data += negtensor
             break;
         if len(negtensor) == 0:
@@ -24,23 +24,21 @@ def random_mix(postensor, negtensor, data, label):
             postensor.pop()
         else:
             data.append(negtensor[-1])
-            label.append(-1)
+            label.append(0)
             negtensor.pop()
 
-negtensor = list(tf.io.parse_tensor(tf.io.read_file("negtensor.txt"),out_type=tf.float32))
-postensor = list(tf.io.parse_tensor(tf.io.read_file("postensor.txt"),out_type=tf.float32))
+negtensor = list(tf.io.parse_tensor(tf.io.read_file("negtensorbagofwordstest.txt"),out_type=tf.int32))
+postensor = list(tf.io.parse_tensor(tf.io.read_file("postensorbagofwordstest.txt"),out_type=tf.int32))
 
 
 data = []
 label = []
-
 random_mix(postensor,negtensor,data,label)
 print(len(data))
 print(len(data[0]))
 print(type(data[0]))
 print(len(label))
-
-data = tf.convert_to_tensor(data, dtype=tf.float32)
-label = tf.convert_to_tensor(label,dtype=tf.float32)
-tf.io.write_file("mixedinput.txt", tf.io.serialize_tensor(data))
-tf.io.write_file("inputlabel.txt", tf.io.serialize_tensor(label))
+data = tf.convert_to_tensor(data, dtype=tf.int32)
+label = tf.convert_to_tensor(label,dtype=tf.int32)
+tf.io.write_file("mixedinputbowtest.txt", tf.io.serialize_tensor(data))
+tf.io.write_file("inputlabelbowtest.txt", tf.io.serialize_tensor(label))

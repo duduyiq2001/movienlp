@@ -24,14 +24,14 @@ inputdata = tf.io.parse_tensor(tf.io.read_file("mixedinput1.txt"),out_type=tf.fl
 inputlabel = tf.io.parse_tensor(tf.io.read_file("inputlabel1.txt"),out_type=tf.float32)
 inputlabel1 = [1 if a == 1 else 0 for a in inputlabel]
 inputlabel1 = tf.convert_to_tensor(inputlabel1, dtype=tf.int32)
-val_size = int(0.2*len(inputdata))
+train_size = int(0.8*len(inputdata))
 
 
-Xval = inputdata[0:val_size]
-Yval = inputlabel1[0:val_size]
+Xval = inputdata[train_size:]
+Yval = inputlabel1[train_size:]
 
-Xtr = inputdata[val_size:]
-Ytr = inputlabel1[val_size:]
+Xtr = inputdata[0:train_size]
+Ytr = inputlabel1[0:train_size]
 
 early_stop_callback = EarlyStopping(
     monitor='val_loss',
@@ -40,7 +40,7 @@ early_stop_callback = EarlyStopping(
 )
 
 
-NNmodel.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback], epochs = 30,batch_size = 32)
+NNmodel.fit(Xtr, Ytr, validation_data=(Xval, Yval),callbacks = [early_stop_callback], epochs = 30,batch_size = 32)
 NNmodel.summary()
 for i, loss in enumerate(NNmodel.history.history['loss']):
     print(f"Epoch {i}: Training loss = {loss}")

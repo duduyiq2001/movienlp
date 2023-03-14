@@ -13,7 +13,7 @@ print(inputlabel[0:30])
 inputlabel1 = [1 if a == 1 else 0 for a in inputlabel]
 inputlabel1 = tf.convert_to_tensor(inputlabel1, dtype=tf.int32)
 print(inputlabel1[0:20])
-val_size = int(0.2*len(inputdata))
+val_size = int(0.8*len(inputdata))
 
 # Train a Random Forest model.
 model = tfdf.keras.RandomForestModel(num_trees=1000, bootstrap_size_ratio = 0.8)

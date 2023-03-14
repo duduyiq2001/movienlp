@@ -20,7 +20,7 @@ inputdata = tf.io.parse_tensor(tf.io.read_file("/content/movienlp/mixedinput1.tx
 inputlabel = tf.io.parse_tensor(tf.io.read_file("/content/movienlp/inputlabel1.txt"),out_type=tf.float32)
 inputlabel1 = [1 if a == 1 else 0 for a in inputlabel]
 inputlabel1 = tf.convert_to_tensor(inputlabel1, dtype=tf.int32)
-val_size = int(0.2*len(inputdata))
+val_size = int(0.8*len(inputdata))
 
 '''
 dataset = tf.data.Dataset.from_tensor_slices((inputdata,inputlabel))
