@@ -5,6 +5,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.optimizers import Adam
 import pandas as pd
 
 
@@ -19,7 +20,8 @@ NNmodel.add(Dense(300, activation = 'relu'))
 NNmodel.add(Dense(200, activation = 'relu'))
 NNmodel.add(Dense(100, activation = 'relu'))
 NNmodel.add(Dense(1, activation = 'sigmoid'))
-NNmodel.compile(loss = 'binary_crossentropy',optimizer = 'adam',metrics = ['accuracy'])
+opti = Adam(learning_rate = 0.0001)
+NNmodel.compile(loss = 'binary_crossentropy',optimizer = opti,metrics = ['accuracy'])
 
 inputdata = tf.io.parse_tensor(tf.io.read_file("mixedinput1.txt"),out_type=tf.float32)
 inputlabel = tf.io.parse_tensor(tf.io.read_file("inputlabel1.txt"),out_type=tf.float32)
@@ -41,7 +43,7 @@ early_stop_callback = EarlyStopping(
 )
 
 
-NNmodel.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback], epochs = 1,batch_size = 32)
+NNmodel.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback], epochs = 30,batch_size = 32)
 NNmodel.summary()
 for i, loss in enumerate(NNmodel.history.history['loss']):
     print(f"Epoch {i}: Training loss = {loss}")
@@ -52,6 +54,6 @@ for i, loss in enumerate(NNmodel.history.history['loss']):
 #model.evaluate(test_ds)
 
 # Export the model to a SavedModel.
-NNmodel.save("NN_withdropout")
+NNmodel.save("NN_realwithdropoutreducedlearningrate")
 
 print(NNmodel.predict(inputdata[0:20]))
