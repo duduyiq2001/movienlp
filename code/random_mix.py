@@ -27,8 +27,8 @@ def random_mix(postensor, negtensor, data, label):
             label.append(0)
             negtensor.pop()
 
-negtensor = list(tf.io.parse_tensor(tf.io.read_file("negtensorbagofwordstest.txt"),out_type=tf.int32))
-postensor = list(tf.io.parse_tensor(tf.io.read_file("postensorbagofwordstest.txt"),out_type=tf.int32))
+negtensor = list(tf.io.parse_tensor(tf.io.read_file("negtensortestbow.txt"),out_type=tf.int32))
+postensor = list(tf.io.parse_tensor(tf.io.read_file("postensortestbow.txt"),out_type=tf.int32))
 
 
 data = []

@@ -16,8 +16,11 @@ NNmodel = Sequential()
 NNmodel.add(Dense(500, activation = 'relu'))
 NNmodel.add(Dropout(rate = 0.2))
 NNmodel.add(Dense(400, activation = 'relu'))
+NNmodel.add(Dense(300, activation = 'relu'))
+NNmodel.add(Dense(200, activation = 'relu'))
+NNmodel.add(Dense(100, activation = 'relu'))
 NNmodel.add(Dense(1, activation = 'sigmoid'))
-opti = Adam(learning_rate = 0.0001)
+opti = Adam(learning_rate = 0.00001)
 NNmodel.compile(loss = 'binary_crossentropy',optimizer = opti,metrics = ['accuracy'])
 
 inputdata = tf.io.parse_tensor(tf.io.read_file("mixedinputbow.txt"),out_type=tf.int32)
@@ -40,7 +43,7 @@ early_stop_callback = EarlyStopping(
 )
 
 
-NNmodel.fit(Xtr, Ytr, validation_data=(Xval, Yval),callbacks = [early_stop_callback], epochs = 10,batch_size = 32)
+NNmodel.fit(Xtr, Ytr, validation_data=(Xval, Yval),callbacks = [early_stop_callback], epochs = 30,batch_size = 32)
 NNmodel.summary()
 for i, loss in enumerate(NNmodel.history.history['loss']):
     print(f"Epoch {i}: Training loss = {loss}")
@@ -51,6 +54,6 @@ for i, loss in enumerate(NNmodel.history.history['loss']):
 #model.evaluate(test_ds)
 
 # Export the model to a SavedModel.
-NNmodel.save("NN_bow")
+NNmodel.save("NN_longbow")
 
 print(NNmodel.predict(inputdata[0:20]))

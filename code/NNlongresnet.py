@@ -59,4 +59,4 @@ model.summary()
 for i, loss in enumerate(model.history.history['loss']):
     print(f"Epoch {i}: Training loss = {loss}")
 
-model.save("NN_longresnetwithdropout")
+model.save("NN_longresnet")

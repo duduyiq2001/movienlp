@@ -17,7 +17,7 @@ NNmodel.add(Dense(500, activation = 'relu'))
 NNmodel.add(Dropout(rate = 0.2))
 NNmodel.add(Dense(200, activation = 'relu'))
 NNmodel.add(Dense(1, activation = 'sigmoid'))
-opti = Adam(learning_rate = 0.0001)
+opti = Adam(learning_rate = 0.00001)
 NNmodel.compile(loss = 'binary_crossentropy',optimizer = opti,metrics = ['accuracy'])
 
 inputdata = tf.io.parse_tensor(tf.io.read_file("mixedinput1.txt"),out_type=tf.float32)
@@ -51,6 +51,6 @@ for i, loss in enumerate(NNmodel.history.history['loss']):
 #model.evaluate(test_ds)
 
 # Export the model to a SavedModel.
-NNmodel.save("NN_withdropoutreducedlearningrate")
+NNmodel.save("NN_reducedlayers")
 
 print(NNmodel.predict(inputdata[0:20]))
