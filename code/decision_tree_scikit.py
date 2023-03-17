@@ -15,7 +15,7 @@ Ytr = tf.io.parse_tensor(tf.io.read_file("inputlabelbow.txt"),out_type=tf.int32)
 Xte = tf.io.parse_tensor(tf.io.read_file("mixedinputbowtest.txt"),out_type=tf.int32)
 Yte = tf.io.parse_tensor(tf.io.read_file("inputlabelbowtest.txt"),out_type=tf.int32)
 
-learner = tree.DecisionTreeClassifier(max_depth = 7,criterion='entropy', min_samples_leaf= 170)
+learner = tree.DecisionTreeClassifier(max_depth = 30,criterion='entropy', min_samples_leaf= 30)
 learner.fit(Xtr, Ytr)
 dump(learner, "decisionTreeScikit.joblib")
 print(f'Training error rate: {J01(learner.predict(Xtr),Ytr)}')

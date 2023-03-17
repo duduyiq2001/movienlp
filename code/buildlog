@@ -538,5 +538,16 @@ e: NVIDIA GeForce RTX 2070 Super with Max-Q Design, pci bus id: 0000:01:00.0, co
 24985
 781/781 [==============================] - 1s 1ms/step
 0.15357214328597157
+logreg:
+2023-03-16 21:03:15.456930: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-16 21:03:16.092204: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5965 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2070 Super with Max-Q Design, pci bus id: 0000:01:00.0, compute capability: 7.5
+[0 0 0 1 1 0 0 0 1 1 0 1 1 1 1 0 1 0 1 1]
+Training error rate: 0.14661383285302598
+Validation error rate: 0.15153091855113066
+decision tree maxdepth:30 minleaf:30
+2023-03-16 21:16:44.985255: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5965 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2070 Super with Max-Q Design, pci bus id: 0000:01:00.0, compute capability: 7.5
+Training error rate: 0.21265609990393852
+Validation error rate: 0.25571342805683406
 
 
