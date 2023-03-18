@@ -3755,7 +3755,9 @@ Number of iteration to final model: 1000
 	Iter:976 train-loss:0.329917 valid-loss:0.943097  train-accuracy:0.991845 valid-accuracy:0.771263
 	Iter:986 train-loss:0.326818 valid-loss:0.942690  train-accuracy:0.991995 valid-accuracy:0.770462
 	Iter:996 train-loss:0.323965 valid-loss:0.942042  train-accuracy:0.992145 valid-accuracy:0.771063
-
+24985
+781/781 [==============================] - 4s 4ms/step
+0.21100660396237747
 WARNING:absl:Found untraced functions such as call_get_leaves, _update_step_xla while saving (showing 2 of 2). These functions will not be directly callable after loading.
 [ ]
 !python /content/movienlp/code/random_forest.py
@@ -7389,3 +7391,621 @@ Epoch 16: Training loss = 0.383291095495224
 24985
 781/781 [==============================] - 2s 1ms/step
 0.19415649389633782
+logreg:
+[1 0 0 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 1]
+Training error rate: 0.17979506884406016
+Validation error rate: 0.18899339603762255
+
+NNmodel.py (learning_rate = 0.00001; epochs = 15)
+
+Epoch 1/15
+625/625 [==============================] - 8s 10ms/step - loss: 0.6794 - accuracy: 0.6433 - val_loss: 0.6417 - val_accuracy: 0.7314
+Epoch 2/15
+625/625 [==============================] - 6s 9ms/step - loss: 0.5479 - accuracy: 0.7619 - val_loss: 0.4889 - val_accuracy: 0.7659
+Epoch 3/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4601 - accuracy: 0.7839 - val_loss: 0.4639 - val_accuracy: 0.7769
+Epoch 4/15
+625/625 [==============================] - 6s 9ms/step - loss: 0.4436 - accuracy: 0.7925 - val_loss: 0.4572 - val_accuracy: 0.7841
+Epoch 5/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4326 - accuracy: 0.8002 - val_loss: 0.4503 - val_accuracy: 0.7849
+Epoch 6/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4248 - accuracy: 0.8029 - val_loss: 0.4455 - val_accuracy: 0.7907
+Epoch 7/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4202 - accuracy: 0.8056 - val_loss: 0.4495 - val_accuracy: 0.7877
+Epoch 8/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4160 - accuracy: 0.8100 - val_loss: 0.4446 - val_accuracy: 0.7901
+Epoch 9/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4126 - accuracy: 0.8097 - val_loss: 0.4394 - val_accuracy: 0.7997
+Epoch 10/15
+625/625 [==============================] - 6s 9ms/step - loss: 0.4116 - accuracy: 0.8095 - val_loss: 0.4400 - val_accuracy: 0.7951
+Epoch 11/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4051 - accuracy: 0.8158 - val_loss: 0.4369 - val_accuracy: 0.8019
+Epoch 12/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.4024 - accuracy: 0.8159 - val_loss: 0.4412 - val_accuracy: 0.7947
+Epoch 13/15
+625/625 [==============================] - 6s 10ms/step - loss: 0.3978 - accuracy: 0.8197 - val_loss: 0.4408 - val_accuracy: 0.7959
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ dense (Dense)               (None, 500)               192500
+
+ dropout (Dropout)           (None, 500)               0
+
+ dense_1 (Dense)             (None, 400)               200400
+
+ dense_2 (Dense)             (None, 300)               120300
+
+ dense_3 (Dense)             (None, 200)               60200
+
+ dense_4 (Dense)             (None, 100)               20100
+
+ dense_5 (Dense)             (None, 1)                 101
+
+=================================================================
+Total params: 593,601
+Trainable params: 593,601
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 0: Training loss = 0.6794379949569702
+Epoch 1: Training loss = 0.5479020476341248
+Epoch 2: Training loss = 0.46012917160987854
+Epoch 3: Training loss = 0.4435824155807495
+Epoch 4: Training loss = 0.43255743384361267
+Epoch 5: Training loss = 0.4248354136943817
+Epoch 6: Training loss = 0.42022934556007385
+Epoch 7: Training loss = 0.4160313010215759
+Epoch 8: Training loss = 0.41262099146842957
+Epoch 9: Training loss = 0.41163861751556396
+Epoch 10: Training loss = 0.40514761209487915
+Epoch 11: Training loss = 0.40243804454803467
+Epoch 12: Training loss = 0.39780393242836
+1/1 [==============================] - 0s 256ms/step
+[[0.5781958 ]
+ [0.01039251]
+ [0.11357234]
+ [0.6610581 ]
+ [0.89375895]
+ [0.62745094]
+ [0.3148854 ]
+ [0.98436457]
+ [0.9418605 ]
+ [0.888757  ]
+ [0.1893083 ]
+ [0.516209  ]
+ [0.22119716]
+ [0.04241394]
+ [0.1067451 ]
+ [0.51399416]
+ [0.08818608]
+ [0.4154617 ]
+ [0.28873873]
+ [0.9826273 ]]
+
+Error rate: 0.19475685411246746
+
+===================================================================
+NNmodelwithreducedlayers.py
+
+Epoch 1/30
+625/625 [==============================] - 6s 8ms/step - loss: 0.5362 - accuracy: 0.7431 - val_loss: 0.4592 - val_accuracy: 0.7805
+Epoch 2/30
+625/625 [==============================] - 5s 7ms/step - loss: 0.4239 - accuracy: 0.8031 - val_loss: 0.4372 - val_accuracy: 0.7961
+Epoch 3/30
+625/625 [==============================] - 4s 7ms/step - loss: 0.4085 - accuracy: 0.8118 - val_loss: 0.4330 - val_accuracy: 0.7991
+Epoch 4/30
+625/625 [==============================] - 4s 7ms/step - loss: 0.3981 - accuracy: 0.8179 - val_loss: 0.4322 - val_accuracy: 0.8009
+Epoch 5/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3884 - accuracy: 0.8248 - val_loss: 0.4281 - val_accuracy: 0.8041
+Epoch 6/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3806 - accuracy: 0.8292 - val_loss: 0.4277 - val_accuracy: 0.8059
+Epoch 7/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3723 - accuracy: 0.8347 - val_loss: 0.4300 - val_accuracy: 0.8039
+Epoch 8/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3605 - accuracy: 0.8418 - val_loss: 0.4283 - val_accuracy: 0.8015
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ dense (Dense)               (None, 300)               115500
+
+ dropout (Dropout)           (None, 300)               0
+
+ dense_1 (Dense)             (None, 200)               60200
+
+ dense_2 (Dense)             (None, 1)                 201
+
+=================================================================
+Total params: 175,901
+Trainable params: 175,901
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 0: Training loss = 0.5361809134483337
+Epoch 1: Training loss = 0.42394402623176575
+Epoch 2: Training loss = 0.40850144624710083
+Epoch 3: Training loss = 0.39811354875564575
+Epoch 4: Training loss = 0.3884499967098236
+Epoch 5: Training loss = 0.3806004524230957
+Epoch 6: Training loss = 0.37230536341667175
+Epoch 7: Training loss = 0.36047449707984924
+1/1 [==============================] - 0s 132ms/step
+[[0.5722318 ]
+ [0.00882092]
+ [0.18864745]
+ [0.6098243 ]
+ [0.922451  ]
+ [0.4773751 ]
+ [0.28602156]
+ [0.9903474 ]
+ [0.9373711 ]
+ [0.88143307]
+ [0.22871678]
+ [0.55100733]
+ [0.19867045]
+ [0.06570871]
+ [0.08270262]
+ [0.4247063 ]
+ [0.10118235]
+ [0.31691957]
+ [0.20588814]
+ [0.98833585]]
+
+Error rate: 0.1876325795477286
+===================================================================
+NNresNet.py
+
+Epoch 1/30
+625/625 [==============================] - 9s 11ms/step - loss: 0.6815 - accuracy: 0.5992 - val_loss: 0.6541 - val_accuracy: 0.7102
+Epoch 2/30
+625/625 [==============================] - 7s 11ms/step - loss: 0.5811 - accuracy: 0.7568 - val_loss: 0.5269 - val_accuracy: 0.7519
+Epoch 3/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4808 - accuracy: 0.7761 - val_loss: 0.4810 - val_accuracy: 0.7675
+Epoch 4/30
+625/625 [==============================] - 7s 10ms/step - loss: 0.4495 - accuracy: 0.7897 - val_loss: 0.4675 - val_accuracy: 0.7743
+Epoch 5/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4366 - accuracy: 0.7949 - val_loss: 0.4542 - val_accuracy: 0.7807
+Epoch 6/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4271 - accuracy: 0.8010 - val_loss: 0.4500 - val_accuracy: 0.7833
+Epoch 7/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4207 - accuracy: 0.8047 - val_loss: 0.4475 - val_accuracy: 0.7843
+Epoch 8/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4157 - accuracy: 0.8089 - val_loss: 0.4438 - val_accuracy: 0.7881
+Epoch 9/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4112 - accuracy: 0.8145 - val_loss: 0.4409 - val_accuracy: 0.7921
+Epoch 10/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4082 - accuracy: 0.8144 - val_loss: 0.4392 - val_accuracy: 0.7951
+Epoch 11/30
+625/625 [==============================] - 6s 10ms/step - loss: 0.4040 - accuracy: 0.8173 - val_loss: 0.4409 - val_accuracy: 0.7909
+Epoch 12/30
+625/625 [==============================] - 6s 9ms/step - loss: 0.4006 - accuracy: 0.8175 - val_loss: 0.4388 - val_accuracy: 0.7931
+Epoch 13/30
+625/625 [==============================] - 5s 9ms/step - loss: 0.4001 - accuracy: 0.8186 - val_loss: 0.4365 - val_accuracy: 0.7971
+Epoch 14/30
+625/625 [==============================] - 6s 9ms/step - loss: 0.3957 - accuracy: 0.8214 - val_loss: 0.4376 - val_accuracy: 0.7955
+Epoch 15/30
+625/625 [==============================] - 6s 9ms/step - loss: 0.3946 - accuracy: 0.8220 - val_loss: 0.4356 - val_accuracy: 0.7961
+Epoch 16/30
+625/625 [==============================] - 6s 9ms/step - loss: 0.3917 - accuracy: 0.8230 - val_loss: 0.4351 - val_accuracy: 0.7977
+Epoch 17/30
+625/625 [==============================] - 5s 9ms/step - loss: 0.3886 - accuracy: 0.8267 - val_loss: 0.4370 - val_accuracy: 0.7963
+Epoch 18/30
+625/625 [==============================] - 5s 9ms/step - loss: 0.3865 - accuracy: 0.8265 - val_loss: 0.4362 - val_accuracy: 0.7967
+Epoch 19/30
+625/625 [==============================] - 5s 9ms/step - loss: 0.3832 - accuracy: 0.8293 - val_loss: 0.4405 - val_accuracy: 0.7945
+Epoch 20/30
+625/625 [==============================] - 5s 9ms/step - loss: 0.3822 - accuracy: 0.8282 - val_loss: 0.4356 - val_accuracy: 0.7993
+Epoch 21/30
+625/625 [==============================] - 5s 9ms/step - loss: 0.3791 - accuracy: 0.8316 - val_loss: 0.4394 - val_accuracy: 0.7969
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ input_1 (InputLayer)           [(None, 384)]        0           []
+
+ dense (Dense)                  (None, 500)          192500      ['input_1[0][0]']
+
+ dropout (Dropout)              (None, 500)          0           ['dense[0][0]']
+
+ dense_1 (Dense)                (None, 400)          200400      ['dropout[0][0]']
+
+ dense_2 (Dense)                (None, 384)          153984      ['dense_1[0][0]']
+
+ add (Add)                      (None, 384)          0           ['input_1[0][0]',
+                                                                  'dense_2[0][0]']
+
+ dense_3 (Dense)                (None, 1)            385         ['add[0][0]']
+
+==================================================================================================
+Total params: 547,269
+Trainable params: 547,269
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 0: Training loss = 0.6814637780189514
+Epoch 1: Training loss = 0.5811347961425781
+Epoch 2: Training loss = 0.48079919815063477
+Epoch 3: Training loss = 0.4494622051715851
+Epoch 4: Training loss = 0.43658021092414856
+Epoch 5: Training loss = 0.42714911699295044
+Epoch 6: Training loss = 0.4206848740577698
+Epoch 7: Training loss = 0.4156905710697174
+Epoch 8: Training loss = 0.41123858094215393
+Epoch 9: Training loss = 0.40816956758499146
+Epoch 10: Training loss = 0.4040148854255676
+Epoch 11: Training loss = 0.4005977511405945
+Epoch 12: Training loss = 0.4000939428806305
+Epoch 13: Training loss = 0.39565178751945496
+Epoch 14: Training loss = 0.3946313261985779
+Epoch 15: Training loss = 0.39168885350227356
+Epoch 16: Training loss = 0.3885628581047058
+Epoch 17: Training loss = 0.38654088973999023
+Epoch 18: Training loss = 0.38316214084625244
+Epoch 19: Training loss = 0.3821902573108673
+Epoch 20: Training loss = 0.3791036307811737
+
+Error rate: 0.18971382829697814
+
+========================================================================
+NNmodelwithreducedlayers.py (set first NNmodel.add(Dense(400, activation = 'relu')))
+
+Epoch 1/30
+625/625 [==============================] - 5s 6ms/step - loss: 0.5346 - accuracy: 0.7512 - val_loss: 0.4610 - val_accuracy: 0.7765
+Epoch 2/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.4249 - accuracy: 0.8018 - val_loss: 0.4404 - val_accuracy: 0.7921
+Epoch 3/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.4080 - accuracy: 0.8120 - val_loss: 0.4380 - val_accuracy: 0.7975
+Epoch 4/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3981 - accuracy: 0.8189 - val_loss: 0.4361 - val_accuracy: 0.7953
+Epoch 5/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3870 - accuracy: 0.8258 - val_loss: 0.4348 - val_accuracy: 0.8003
+Epoch 6/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3754 - accuracy: 0.8330 - val_loss: 0.4357 - val_accuracy: 0.7991
+Epoch 7/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3656 - accuracy: 0.8401 - val_loss: 0.4336 - val_accuracy: 0.8031
+Epoch 8/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3526 - accuracy: 0.8481 - val_loss: 0.4313 - val_accuracy: 0.8023
+Epoch 9/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3403 - accuracy: 0.8535 - val_loss: 0.4327 - val_accuracy: 0.8027
+Epoch 10/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3278 - accuracy: 0.8617 - val_loss: 0.4379 - val_accuracy: 0.8001
+Epoch 11/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3141 - accuracy: 0.8678 - val_loss: 0.4450 - val_accuracy: 0.7981
+Epoch 12/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3025 - accuracy: 0.8750 - val_loss: 0.4429 - val_accuracy: 0.7967
+Epoch 13/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.2894 - accuracy: 0.8807 - val_loss: 0.4514 - val_accuracy: 0.7987
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ dense (Dense)               (None, 400)               154000
+
+ dropout (Dropout)           (None, 400)               0
+
+ dense_1 (Dense)             (None, 200)               80200
+
+ dense_2 (Dense)             (None, 1)                 201
+
+=================================================================
+Total params: 234,401
+Trainable params: 234,401
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 0: Training loss = 0.5345777869224548
+Epoch 1: Training loss = 0.4248700737953186
+Epoch 2: Training loss = 0.4079720079898834
+Epoch 3: Training loss = 0.39811354875564575
+Epoch 4: Training loss = 0.3870394825935364
+Epoch 5: Training loss = 0.3754165768623352
+Epoch 6: Training loss = 0.365617960691452
+Epoch 7: Training loss = 0.3525877296924591
+Epoch 8: Training loss = 0.3403131365776062
+Epoch 9: Training loss = 0.3278397023677826
+Epoch 10: Training loss = 0.3141203820705414
+Epoch 11: Training loss = 0.30246248841285706
+Epoch 12: Training loss = 0.28943973779678345
+1/1 [==============================] - 0s 156ms/step
+[[0.5589202 ]
+ [0.0076895 ]
+ [0.18053916]
+ [0.5952166 ]
+ [0.9450977 ]
+ [0.42137542]
+ [0.33656332]
+ [0.9878302 ]
+ [0.9509733 ]
+ [0.8765852 ]
+ [0.22071502]
+ [0.40980878]
+ [0.19774908]
+ [0.07048044]
+ [0.08761063]
+ [0.4145987 ]
+ [0.07714241]
+ [0.19156359]
+ [0.15618928]
+ [0.9882063 ]]
+
+Error rate: 0.1871122673604162
+ ========================================================================
+NNmodelwithreducedlayers.py (set first NNmodel.add(Dense(300, activation = 'relu')))
+
+Epoch 1/30
+625/625 [==============================] - 5s 6ms/step - loss: 0.5346 - accuracy: 0.7512 - val_loss: 0.4610 - val_accuracy: 0.7765
+Epoch 2/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.4249 - accuracy: 0.8018 - val_loss: 0.4404 - val_accuracy: 0.7921
+Epoch 3/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.4080 - accuracy: 0.8120 - val_loss: 0.4380 - val_accuracy: 0.7975
+Epoch 4/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3981 - accuracy: 0.8189 - val_loss: 0.4361 - val_accuracy: 0.7953
+Epoch 5/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3870 - accuracy: 0.8258 - val_loss: 0.4348 - val_accuracy: 0.8003
+Epoch 6/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3754 - accuracy: 0.8330 - val_loss: 0.4357 - val_accuracy: 0.7991
+Epoch 7/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3656 - accuracy: 0.8401 - val_loss: 0.4336 - val_accuracy: 0.8031
+Epoch 8/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3526 - accuracy: 0.8481 - val_loss: 0.4313 - val_accuracy: 0.8023
+Epoch 9/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3403 - accuracy: 0.8535 - val_loss: 0.4327 - val_accuracy: 0.8027
+Epoch 10/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3278 - accuracy: 0.8617 - val_loss: 0.4379 - val_accuracy: 0.8001
+Epoch 11/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3141 - accuracy: 0.8678 - val_loss: 0.4450 - val_accuracy: 0.7981
+Epoch 12/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.3025 - accuracy: 0.8750 - val_loss: 0.4429 - val_accuracy: 0.7967
+Epoch 13/30
+625/625 [==============================] - 4s 6ms/step - loss: 0.2894 - accuracy: 0.8807 - val_loss: 0.4514 - val_accuracy: 0.7987
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ dense (Dense)               (None, 400)               154000
+
+ dropout (Dropout)           (None, 400)               0
+
+ dense_1 (Dense)             (None, 200)               80200
+
+ dense_2 (Dense)             (None, 1)                 201
+
+=================================================================
+Total params: 234,401
+Trainable params: 234,401
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 0: Training loss = 0.5345777869224548
+Epoch 1: Training loss = 0.4248700737953186
+Epoch 2: Training loss = 0.4079720079898834
+Epoch 3: Training loss = 0.39811354875564575
+Epoch 4: Training loss = 0.3870394825935364
+Epoch 5: Training loss = 0.3754165768623352
+Epoch 6: Training loss = 0.365617960691452
+Epoch 7: Training loss = 0.3525877296924591
+Epoch 8: Training loss = 0.3403131365776062
+Epoch 9: Training loss = 0.3278397023677826
+Epoch 10: Training loss = 0.3141203820705414
+Epoch 11: Training loss = 0.30246248841285706
+Epoch 12: Training loss = 0.28943973779678345
+1/1 [==============================] - 0s 156ms/step
+[[0.5589202 ]
+ [0.0076895 ]
+ [0.18053916]
+ [0.5952166 ]
+ [0.9450977 ]
+ [0.42137542]
+ [0.33656332]
+ [0.9878302 ]
+ [0.9509733 ]
+ [0.8765852 ]
+ [0.22071502]
+ [0.40980878]
+ [0.19774908]
+ [0.07048044]
+ [0.08761063]
+ [0.4145987 ]
+ [0.07714241]
+ [0.19156359]
+ [0.15618928]
+ [0.9882063 ]]
+
+(cs178) C:\Users\kayli\OneDrive\Desktop\movienlp\code>python eval.py
+2023-03-16 21:11:01.235169: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2023-03-16 21:11:01.250575: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-03-16 21:11:09.773573: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2023-03-16 21:11:10.404917: W tensorflow/stream_executor/cuda/cuda_driver.cc:263] failed call to cuInit: UNKNOWN ERROR (303)
+2023-03-16 21:11:10.428454: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: DESKTOP-11JHC5V
+2023-03-16 21:11:10.428766: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: DESKTOP-11JHC5V
+2023-03-16 21:11:10.430202: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+24985
+781/781 [==============================] - 3s 3ms/step
+0.1871122673604162
+
+(cs178) C:\Users\kayli\OneDrive\Desktop\movienlp\code>python NNmodelwithreducedlayerstest2.py
+2023-03-16 21:13:25.201842: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2023-03-16 21:13:25.202079: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-03-16 21:13:32.823579: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2023-03-16 21:13:32.823789: W tensorflow/stream_executor/cuda/cuda_driver.cc:263] failed call to cuInit: UNKNOWN ERROR (303)
+2023-03-16 21:13:32.830333: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: DESKTOP-11JHC5V
+2023-03-16 21:13:32.830668: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: DESKTOP-11JHC5V
+2023-03-16 21:13:32.831736: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Epoch 1/30
+625/625 [==============================] - 5s 6ms/step - loss: 0.5407 - accuracy: 0.7524 - val_loss: 0.4585 - val_accuracy: 0.7815
+Epoch 2/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.4291 - accuracy: 0.8031 - val_loss: 0.4392 - val_accuracy: 0.7973
+Epoch 3/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.4104 - accuracy: 0.8118 - val_loss: 0.4362 - val_accuracy: 0.7979
+Epoch 4/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.4001 - accuracy: 0.8181 - val_loss: 0.4309 - val_accuracy: 0.8025
+Epoch 5/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3914 - accuracy: 0.8236 - val_loss: 0.4296 - val_accuracy: 0.8039
+Epoch 6/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3827 - accuracy: 0.8301 - val_loss: 0.4319 - val_accuracy: 0.8001
+Epoch 7/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3752 - accuracy: 0.8329 - val_loss: 0.4379 - val_accuracy: 0.7945
+Epoch 8/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3641 - accuracy: 0.8406 - val_loss: 0.4312 - val_accuracy: 0.8017
+Epoch 9/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3538 - accuracy: 0.8467 - val_loss: 0.4315 - val_accuracy: 0.8013
+Epoch 10/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3445 - accuracy: 0.8528 - val_loss: 0.4381 - val_accuracy: 0.7981
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ dense (Dense)               (None, 300)               115500
+
+ dropout (Dropout)           (None, 300)               0
+
+ dense_1 (Dense)             (None, 200)               60200
+
+ dense_2 (Dense)             (None, 1)                 201
+
+=================================================================
+Total params: 175,901
+Trainable params: 175,901
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 0: Training loss = 0.5407245755195618
+Epoch 1: Training loss = 0.42909127473831177
+Epoch 2: Training loss = 0.4103599488735199
+Epoch 3: Training loss = 0.40012478828430176
+Epoch 4: Training loss = 0.39138200879096985
+Epoch 5: Training loss = 0.38273072242736816
+Epoch 6: Training loss = 0.37515372037887573
+Epoch 7: Training loss = 0.3640965223312378
+Epoch 8: Training loss = 0.3537800908088684
+Epoch 9: Training loss = 0.3445018529891968
+1/1 [==============================] - 0s 125ms/step
+[[0.5618808 ]
+ [0.009895  ]
+ [0.1950712 ]
+ [0.59107304]
+ [0.94255114]
+ [0.5218138 ]
+ [0.27965146]
+ [0.9915515 ]
+ [0.9344452 ]
+ [0.8708841 ]
+ [0.24208437]
+ [0.5475187 ]
+ [0.22688481]
+ [0.05057591]
+ [0.08187669]
+ [0.47460413]
+ [0.0750098 ]
+ [0.35643053]
+ [0.21234724]
+ [0.98887026]]
+
+Error rate: 0.1885931558935361
+
+ ========================================================================
+NNmodelwithreducedlayers.py (set NNmodel.add(Dropout(rate = 0.1)))
+
+Epoch 1/30
+625/625 [==============================] - 5s 6ms/step - loss: 0.5429 - accuracy: 0.7471 - val_loss: 0.4619 - val_accuracy: 0.7779
+Epoch 2/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.4271 - accuracy: 0.8005 - val_loss: 0.4416 - val_accuracy: 0.7943
+Epoch 3/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.4091 - accuracy: 0.8118 - val_loss: 0.4402 - val_accuracy: 0.7967
+Epoch 4/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3976 - accuracy: 0.8196 - val_loss: 0.4326 - val_accuracy: 0.8001
+Epoch 5/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3886 - accuracy: 0.8258 - val_loss: 0.4291 - val_accuracy: 0.8011
+Epoch 6/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3796 - accuracy: 0.8305 - val_loss: 0.4338 - val_accuracy: 0.7991
+Epoch 7/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3697 - accuracy: 0.8377 - val_loss: 0.4318 - val_accuracy: 0.8015
+Epoch 8/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3599 - accuracy: 0.8438 - val_loss: 0.4389 - val_accuracy: 0.7971
+Epoch 9/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3485 - accuracy: 0.8516 - val_loss: 0.4342 - val_accuracy: 0.7979
+Epoch 10/30
+625/625 [==============================] - 3s 5ms/step - loss: 0.3362 - accuracy: 0.8580 - val_loss: 0.4364 - val_accuracy: 0.7997
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ dense (Dense)               (None, 300)               115500
+
+ dropout (Dropout)           (None, 300)               0
+
+ dense_1 (Dense)             (None, 200)               60200
+
+ dense_2 (Dense)             (None, 1)                 201
+
+=================================================================
+Total params: 175,901
+Trainable params: 175,901
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 0: Training loss = 0.5429201722145081
+Epoch 1: Training loss = 0.42707499861717224
+Epoch 2: Training loss = 0.4090879559516907
+Epoch 3: Training loss = 0.39761054515838623
+Epoch 4: Training loss = 0.38857483863830566
+Epoch 5: Training loss = 0.37957513332366943
+Epoch 6: Training loss = 0.3696698248386383
+Epoch 7: Training loss = 0.35992568731307983
+Epoch 8: Training loss = 0.3484988212585449
+Epoch 9: Training loss = 0.33621010184288025
+1/1 [==============================] - 0s 125ms/step
+[[0.5327635 ]
+ [0.00672431]
+ [0.144217  ]
+ [0.6175549 ]
+ [0.8968854 ]
+ [0.4810156 ]
+ [0.30945846]
+ [0.98942655]
+ [0.9130188 ]
+ [0.87998706]
+ [0.24920306]
+ [0.5892809 ]
+ [0.19815175]
+ [0.03436174]
+ [0.09354817]
+ [0.45861694]
+ [0.06699134]
+ [0.26352194]
+ [0.20558493]
+ [0.9860244 ]]
+
+Error rate: 0.18999399639783865
+
+ ========================================================================
+decision_tree_scikit.py
+
+max_depth = 7,  min_samples_leaf= 170
+    Training error rate: 0.29823086775536345
+    Validation error rate: 0.32715629377626576
+
+max_depth = 30, min_samples_leaf = 30
+    Training error rate: 0.19672590457893047
+    Validation error rate: 0.3520112067240344
+
+ ========================================================================
+log_reg_scikit.py
+
+[1 0 0 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 1]
+Training error rate: 0.17971501761127118
+
+Errorred out when calculating validation error rate
+
+Traceback (most recent call last):
+  File "C:\Users\kayli\OneDrive\Desktop\movienlp\code\log_reg_scikit.py", line 23, in <module>
+    print(f'Validation error rate: {J01(clf.predict(Xte),Yte)}')
+  File "C:\Users\kayli\miniconda3\envs\cs178\lib\site-packages\sklearn\metrics\_classification.py", line 997, in zero_one_loss
+    score = accuracy_score(
+  File "C:\Users\kayli\miniconda3\envs\cs178\lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\kayli\miniconda3\envs\cs178\lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\Users\kayli\miniconda3\envs\cs178\lib\site-packages\sklearn\metrics\_classification.py", line 86, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\Users\kayli\miniconda3\envs\cs178\lib\site-packages\sklearn\utils\validation.py", line 397, in check_consistent_length
+    raise ValueError(
+ValueError: Found input variables with inconsistent numbers of samples: [24985, 24984]
+
+ ========================================================================
