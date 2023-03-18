@@ -17,7 +17,7 @@ Ytr = inputlabel1
 
 clf = LogisticRegression(max_iter = 200)
 clf.fit(Xtr,Ytr)
-dump(clf, "LoregScikitbow.joblib")
+dump(clf, "LoregScikitSB.joblib")
 print(clf.predict(Xtr)[0:20])
 print(f'Training error rate: {J01(clf.predict(Xtr),Ytr)}')
 print(f'Validation error rate: {J01(clf.predict(Xte),Yte)}')
