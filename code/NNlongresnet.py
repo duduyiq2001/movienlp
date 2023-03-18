@@ -41,8 +41,8 @@ inputlabel1 = tf.convert_to_tensor(inputlabel1, dtype=tf.int32)
 train_size = int(0.8*len(inputdata))
 
 
-Xval = inputdata[train_size:]
-Yval = inputlabel1[train_size:]
+Xte = inputdata[train_size:]
+Yte = inputlabel1[train_size:]
 
 Xtr = inputdata[0:train_size]
 Ytr = inputlabel1[0:train_size]
@@ -54,7 +54,7 @@ early_stop_callback = EarlyStopping(
     restore_best_weights=True
 )
 
-model.fit(Xtr, Ytr, validation_data=(Xtr, Ytr),callbacks = [early_stop_callback], epochs = 30,batch_size = 32)
+model.fit(Xtr, Ytr, validation_data=(Xte, Yte),callbacks = [early_stop_callback], epochs = 30,batch_size = 32)
 model.summary()
 for i, loss in enumerate(model.history.history['loss']):
     print(f"Epoch {i}: Training loss = {loss}")
