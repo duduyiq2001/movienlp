@@ -5624,3 +5624,8 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 24985
 781/781 [==============================] - 2s 1ms/step
 0.15353211927156296
+ased on the provided training logs, the GBDT model seems to be learning as the number of iterations increases. The training and validation loss are both decreasing over time, which is a positive sign. Additionally, the training and validation accuracies are both increasing, which also indicates that the model is learning from the data.
+
+However, there is a noticeable gap between training and validation accuracy, which may suggest overfitting, especially as the number of iterations increase. This might be a result of the GBDT model becoming too complex and fitting too closely to the training data, reducing its ability to generalize to new data. To counteract this, you can try using regularization techniques, early stopping, or adjusting other hyperparameters such as the learning rate, tree depth, or number of leaves.
+
+It's important to note that the subsample rate and the number of subsample features can also affect the GBDT model's performance. The subsample rate determines the fraction of samples used for each boosting round, while the number of subsample features refers to the number of features to consider when looking for the best split. Both of these hyperparameters can influence the model's ability to generalize and avoid overfitting. Tuning these hyperparameters carefully can help strike a balance between underfitting and overfitting, ultimately leading to a more effective model.

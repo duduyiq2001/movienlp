@@ -16,7 +16,7 @@ print(inputlabel1[0:20])
 val_size = int(0.8*len(inputdata))
 
 # Train a Random Forest model.
-model = tfdf.keras.RandomForestModel(num_trees=1000, bootstrap_size_ratio = 0.8)
+model = tfdf.keras.RandomForestModel(num_trees=1000, bootstrap_size_ratio = 0.8, max_depth = 8)
 
 early_stop_callback = EarlyStopping(
     monitor='val_loss',

@@ -7,8 +7,8 @@ print(tf.__version__)
 num_trees = 1000
 max_depth = 8
 learning_rate = 0.01
-subsample_rate = 0.7
-subsample_features = 0.6
+subsample_rate = 0.1
+subsample_features = 0.1
 l1_reg = 0.01
 l2_reg = 0.01
 
