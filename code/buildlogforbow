@@ -5629,3 +5629,115 @@ ased on the provided training logs, the GBDT model seems to be learning as the n
 However, there is a noticeable gap between training and validation accuracy, which may suggest overfitting, especially as the number of iterations increase. This might be a result of the GBDT model becoming too complex and fitting too closely to the training data, reducing its ability to generalize to new data. To counteract this, you can try using regularization techniques, early stopping, or adjusting other hyperparameters such as the learning rate, tree depth, or number of leaves.
 
 It's important to note that the subsample rate and the number of subsample features can also affect the GBDT model's performance. The subsample rate determines the fraction of samples used for each boosting round, while the number of subsample features refers to the number of features to consider when looking for the best split. Both of these hyperparameters can influence the model's ability to generalize and avoid overfitting. Tuning these hyperparameters carefully can help strike a balance between underfitting and overfitting, ultimately leading to a more effective model.
+
+
+GBDT 0.1:0.1
+Iter:1 train-loss:1.382218 valid-loss:1.383090  train-accuracy:0.609546 valid-accuracy:0.591955
+	Iter:2 train-loss:1.378664 valid-loss:1.379639  train-accuracy:0.605744 valid-accuracy:0.590554
+	Iter:3 train-loss:1.374325 valid-loss:1.375573  train-accuracy:0.669385 valid-accuracy:0.646188
+	Iter:4 train-loss:1.369936 valid-loss:1.371273  train-accuracy:0.692500 valid-accuracy:0.673804
+	Iter:5 train-loss:1.365584 valid-loss:1.367252  train-accuracy:0.716466 valid-accuracy:0.695017
+	Iter:6 train-loss:1.361140 valid-loss:1.362791  train-accuracy:0.730925 valid-accuracy:0.715629
+	Iter:16 train-loss:1.323123 valid-loss:1.324548  train-accuracy:0.761195 valid-accuracy:0.752852
+	Iter:26 train-loss:1.288693 valid-loss:1.290379  train-accuracy:0.765898 valid-accuracy:0.759256
+	Iter:36 train-loss:1.258259 valid-loss:1.261007  train-accuracy:0.768650 valid-accuracy:0.756654
+	Iter:46 train-loss:1.229271 valid-loss:1.233087  train-accuracy:0.770851 valid-accuracy:0.759055
+	Iter:56 train-loss:1.203537 valid-loss:1.208468  train-accuracy:0.775854 valid-accuracy:0.763258
+	Iter:66 train-loss:1.180021 valid-loss:1.185538  train-accuracy:0.778456 valid-accuracy:0.766660
+	Iter:76 train-loss:1.158471 valid-loss:1.164844  train-accuracy:0.780357 valid-accuracy:0.768461
+	Iter:86 train-loss:1.138962 valid-loss:1.146835  train-accuracy:0.784860 valid-accuracy:0.770262
+	Iter:96 train-loss:1.120974 valid-loss:1.129749  train-accuracy:0.786561 valid-accuracy:0.773864
+	Iter:106 train-loss:1.103031 valid-loss:1.112676  train-accuracy:0.788062 valid-accuracy:0.775265
+	Iter:116 train-loss:1.086492 valid-loss:1.097249  train-accuracy:0.790514 valid-accuracy:0.775265
+	Iter:126 train-loss:1.071510 valid-loss:1.082847  train-accuracy:0.792665 valid-accuracy:0.778267
+	Iter:136 train-loss:1.057435 valid-loss:1.069688  train-accuracy:0.795967 valid-accuracy:0.780869
+	Iter:146 train-loss:1.044108 valid-loss:1.057292  train-accuracy:0.797919 valid-accuracy:0.782269
+	Iter:156 train-loss:1.030582 valid-loss:1.044673  train-accuracy:0.800020 valid-accuracy:0.784070
+	Iter:166 train-loss:1.018346 valid-loss:1.033031  train-accuracy:0.801921 valid-accuracy:0.786072
+	Iter:176 train-loss:1.006448 valid-loss:1.022199  train-accuracy:0.804173 valid-accuracy:0.789073
+	Iter:186 train-loss:0.996316 valid-loss:1.013044  train-accuracy:0.805924 valid-accuracy:0.789073
+	Iter:196 train-loss:0.985890 valid-loss:1.003541  train-accuracy:0.806824 valid-accuracy:0.790074
+	Iter:206 train-loss:0.975537 valid-loss:0.993688  train-accuracy:0.807575 valid-accuracy:0.791475
+	Iter:216 train-loss:0.966240 valid-loss:0.985909  train-accuracy:0.809826 valid-accuracy:0.793276
+	Iter:226 train-loss:0.956949 valid-loss:0.977604  train-accuracy:0.812978 valid-accuracy:0.794277
+	Iter:236 train-loss:0.948376 valid-loss:0.969888  train-accuracy:0.814529 valid-accuracy:0.796078
+	Iter:246 train-loss:0.940056 valid-loss:0.962547  train-accuracy:0.816431 valid-accuracy:0.798879
+	Iter:256 train-loss:0.932346 valid-loss:0.955941  train-accuracy:0.818182 valid-accuracy:0.799079
+	Iter:266 train-loss:0.924571 valid-loss:0.949176  train-accuracy:0.819333 valid-accuracy:0.800480
+	Iter:276 train-loss:0.916968 valid-loss:0.943188  train-accuracy:0.822435 valid-accuracy:0.802481
+	Iter:286 train-loss:0.910084 valid-loss:0.937329  train-accuracy:0.823585 valid-accuracy:0.804683
+	Iter:296 train-loss:0.903083 valid-loss:0.931817  train-accuracy:0.825837 valid-accuracy:0.805884
+	Iter:306 train-loss:0.896208 valid-loss:0.925887  train-accuracy:0.826937 valid-accuracy:0.806484
+	Iter:316 train-loss:0.889619 valid-loss:0.920712  train-accuracy:0.828238 valid-accuracy:0.806284
+	Iter:326 train-loss:0.883129 valid-loss:0.915535  train-accuracy:0.828839 valid-accuracy:0.807084
+	Iter:336 train-loss:0.877239 valid-loss:0.910519  train-accuracy:0.830290 valid-accuracy:0.808885
+	Iter:346 train-loss:0.871122 valid-loss:0.905126  train-accuracy:0.831040 valid-accuracy:0.809085
+	Iter:356 train-loss:0.865427 valid-loss:0.900603  train-accuracy:0.833192 valid-accuracy:0.810086
+	Iter:366 train-loss:0.859924 valid-loss:0.896071  train-accuracy:0.834042 valid-accuracy:0.811087
+	Iter:376 train-loss:0.854077 valid-loss:0.891533  train-accuracy:0.835393 valid-accuracy:0.812287
+	Iter:386 train-loss:0.848560 valid-loss:0.887108  train-accuracy:0.836644 valid-accuracy:0.814088
+	Iter:396 train-loss:0.843197 valid-loss:0.882880  train-accuracy:0.838895 valid-accuracy:0.814889
+	Iter:406 train-loss:0.838053 valid-loss:0.878840  train-accuracy:0.840146 valid-accuracy:0.814889
+	Iter:416 train-loss:0.833231 valid-loss:0.875087  train-accuracy:0.841297 valid-accuracy:0.817090
+	Iter:426 train-loss:0.828347 valid-loss:0.871170  train-accuracy:0.842197 valid-accuracy:0.817491
+	Iter:436 train-loss:0.823687 valid-loss:0.867344  train-accuracy:0.842948 valid-accuracy:0.817491
+	Iter:446 train-loss:0.818673 valid-loss:0.863705  train-accuracy:0.844599 valid-accuracy:0.818891
+	Iter:456 train-loss:0.814164 valid-loss:0.860136  train-accuracy:0.845600 valid-accuracy:0.818291
+	Iter:466 train-loss:0.809846 valid-loss:0.856552  train-accuracy:0.846200 valid-accuracy:0.819892
+	Iter:476 train-loss:0.805618 valid-loss:0.852995  train-accuracy:0.847751 valid-accuracy:0.821293
+	Iter:486 train-loss:0.802063 valid-loss:0.850471  train-accuracy:0.848001 valid-accuracy:0.822293
+	Iter:496 train-loss:0.798098 valid-loss:0.848185  train-accuracy:0.849552 valid-accuracy:0.822293
+	Iter:506 train-loss:0.794027 valid-loss:0.845065  train-accuracy:0.849852 valid-accuracy:0.822894
+	Iter:516 train-loss:0.790076 valid-loss:0.842278  train-accuracy:0.851003 valid-accuracy:0.823294
+	Iter:526 train-loss:0.786528 valid-loss:0.839736  train-accuracy:0.851403 valid-accuracy:0.823694
+	Iter:536 train-loss:0.782984 valid-loss:0.837291  train-accuracy:0.851654 valid-accuracy:0.824895
+	Iter:546 train-loss:0.779703 valid-loss:0.834750  train-accuracy:0.852704 valid-accuracy:0.824695
+	Iter:556 train-loss:0.775885 valid-loss:0.832091  train-accuracy:0.853605 valid-accuracy:0.824495
+	Iter:566 train-loss:0.772453 valid-loss:0.829665  train-accuracy:0.854956 valid-accuracy:0.824695
+	Iter:576 train-loss:0.768918 valid-loss:0.827334  train-accuracy:0.855156 valid-accuracy:0.825695
+	Iter:586 train-loss:0.765786 valid-loss:0.825241  train-accuracy:0.855556 valid-accuracy:0.825495
+	Iter:596 train-loss:0.762344 valid-loss:0.823180  train-accuracy:0.856407 valid-accuracy:0.824695
+	Iter:606 train-loss:0.758968 valid-loss:0.821221  train-accuracy:0.857207 valid-accuracy:0.825095
+	Iter:616 train-loss:0.755322 valid-loss:0.818505  train-accuracy:0.858058 valid-accuracy:0.825695
+	Iter:626 train-loss:0.752294 valid-loss:0.816136  train-accuracy:0.858708 valid-accuracy:0.824895
+	Iter:636 train-loss:0.749370 valid-loss:0.814024  train-accuracy:0.859609 valid-accuracy:0.825695
+	Iter:646 train-loss:0.746178 valid-loss:0.811647  train-accuracy:0.859509 valid-accuracy:0.826496
+	Iter:656 train-loss:0.743551 valid-loss:0.810210  train-accuracy:0.860860 valid-accuracy:0.825295
+	Iter:666 train-loss:0.740518 valid-loss:0.808161  train-accuracy:0.861110 valid-accuracy:0.828297
+	Iter:676 train-loss:0.737962 valid-loss:0.806795  train-accuracy:0.861660 valid-accuracy:0.827697
+	Iter:686 train-loss:0.735132 valid-loss:0.804923  train-accuracy:0.862160 valid-accuracy:0.829498
+	Iter:696 train-loss:0.732443 valid-loss:0.802987  train-accuracy:0.862661 valid-accuracy:0.829898
+	Iter:706 train-loss:0.729612 valid-loss:0.801428  train-accuracy:0.863161 valid-accuracy:0.829698
+	Iter:716 train-loss:0.726998 valid-loss:0.799540  train-accuracy:0.863461 valid-accuracy:0.831699
+	Iter:726 train-loss:0.724345 valid-loss:0.797829  train-accuracy:0.864162 valid-accuracy:0.830899
+	Iter:736 train-loss:0.721632 valid-loss:0.795660  train-accuracy:0.864562 valid-accuracy:0.832299
+	Iter:746 train-loss:0.719114 valid-loss:0.794371  train-accuracy:0.864962 valid-accuracy:0.831299
+	Iter:756 train-loss:0.716438 valid-loss:0.793045  train-accuracy:0.865663 valid-accuracy:0.831099
+	Iter:766 train-loss:0.714017 valid-loss:0.791563  train-accuracy:0.865663 valid-accuracy:0.831499
+	Iter:776 train-loss:0.711448 valid-loss:0.789907  train-accuracy:0.866663 valid-accuracy:0.831099
+	Iter:786 train-loss:0.708921 valid-loss:0.788393  train-accuracy:0.867564 valid-accuracy:0.831699
+	Iter:796 train-loss:0.706326 valid-loss:0.786677  train-accuracy:0.867014 valid-accuracy:0.831099
+	Iter:806 train-loss:0.703793 valid-loss:0.785213  train-accuracy:0.867914 valid-accuracy:0.832700
+	Iter:816 train-loss:0.701770 valid-loss:0.783675  train-accuracy:0.868264 valid-accuracy:0.832500
+	Iter:826 train-loss:0.699485 valid-loss:0.782419  train-accuracy:0.868615 valid-accuracy:0.832500
+	Iter:836 train-loss:0.697266 valid-loss:0.781059  train-accuracy:0.869615 valid-accuracy:0.832299
+	Iter:846 train-loss:0.695035 valid-loss:0.779929  train-accuracy:0.870616 valid-accuracy:0.833100
+	Iter:856 train-loss:0.692846 valid-loss:0.778354  train-accuracy:0.871066 valid-accuracy:0.833100
+	Iter:866 train-loss:0.690916 valid-loss:0.777191  train-accuracy:0.871316 valid-accuracy:0.833100
+	Iter:876 train-loss:0.688820 valid-loss:0.776108  train-accuracy:0.871617 valid-accuracy:0.833100
+	Iter:886 train-loss:0.686729 valid-loss:0.774840  train-accuracy:0.871516 valid-accuracy:0.833100
+	Iter:896 train-loss:0.684642 valid-loss:0.773412  train-accuracy:0.872217 valid-accuracy:0.834501
+	Iter:906 train-loss:0.682719 valid-loss:0.772012  train-accuracy:0.871767 valid-accuracy:0.833700
+	Iter:916 train-loss:0.680924 valid-loss:0.771266  train-accuracy:0.871617 valid-accuracy:0.834100
+	Iter:926 train-loss:0.678829 valid-loss:0.769843  train-accuracy:0.872417 valid-accuracy:0.834100
+	Iter:936 train-loss:0.677037 valid-loss:0.768583  train-accuracy:0.873268 valid-accuracy:0.834701
+	Iter:946 train-loss:0.674997 valid-loss:0.767419  train-accuracy:0.873868 valid-accuracy:0.834100
+	Iter:956 train-loss:0.673051 valid-loss:0.766290  train-accuracy:0.873818 valid-accuracy:0.834301
+	Iter:966 train-loss:0.671140 valid-loss:0.765473  train-accuracy:0.874268 valid-accuracy:0.834901
+	Iter:976 train-loss:0.669085 valid-loss:0.764153  train-accuracy:0.874869 valid-accuracy:0.835501
+	Iter:986 train-loss:0.667492 valid-loss:0.763143  train-accuracy:0.875119 valid-accuracy:0.835501
+	Iter:996 train-loss:0.665546 valid-loss:0.761796  train-accuracy:0.875219 valid-accuracy:0.836102
+
+	24985
+781/781 [==============================] - 5s 4ms/step
+0.16365819491695022
