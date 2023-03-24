@@ -22,15 +22,7 @@ inputlabel1 = [1 if a == 1 else 0 for a in inputlabel]
 inputlabel1 = tf.convert_to_tensor(inputlabel1, dtype=tf.int32)
 val_size = int(0.8*len(inputdata))
 
-'''
-dataset = tf.data.Dataset.from_tensor_slices((inputdata,inputlabel))
-dataset = dataset.shuffle(len(dataset))
-val_size = int(0.2*len(dataset))
-trainset = dataset.skip(val_size)
-valset = dataset.take(val_size)
-print(trainset.element_spec)
-print(valset.element_spec)
-'''
+
 early_stop_callback = EarlyStopping(
     monitor='val_loss',
     patience=5,

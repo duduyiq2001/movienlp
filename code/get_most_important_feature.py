@@ -12,7 +12,3 @@ data:0.0
 data:0.99
 """
 
-data_list = data_str.split('\n')[1:-1]  # Split the string by lines and remove the first and last empty lines
-numbers = [float(line.split(':')[1]) for line in data_list]  # Extract the number from each line and convert to float
-
-print(numbers)

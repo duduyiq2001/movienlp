@@ -21,15 +21,7 @@ model = tf.keras.models.Model(inputs=featureinput, outputs=output)
 opti = Adam(learning_rate = 0.00001)
 model.compile(loss = 'binary_crossentropy',optimizer = opti,metrics = ['accuracy'])
 
-'''
-x1 = tf.keras.layers.Dense(8, activation='relu')(input1)
-input2 = tf.keras.layers.Input(shape=(32,))
-x2 = tf.keras.layers.Dense(8, activation='relu')(input2)
-# equivalent to `added = tf.keras.layers.add([x1, x2])`
-added = tf.keras.layers.Add()([x1, x2])
-out = tf.keras.layers.Dense(4)(added)
-model = tf.keras.models.Model(inputs=[input1, input2], outputs=out) in the second last line, is it passing the output of the add as the input of the dense layer?
-'''
+
 
 inputdata = tf.io.parse_tensor(tf.io.read_file("mixedinput.txt"),out_type=tf.float32)
 inputlabel = tf.io.parse_tensor(tf.io.read_file("inputlabel.txt"),out_type=tf.float32)

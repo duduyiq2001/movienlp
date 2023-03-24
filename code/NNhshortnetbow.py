@@ -47,8 +47,6 @@ for i, loss in enumerate(NNmodel.history.history['loss']):
 
 
 
-# Evaluate the model.
-#model.evaluate(test_ds)
 
 # Export the model to a SavedModel.
 NNmodel.save("NN_shortnetbow")

@@ -1,3 +1,4 @@
+#for evaluating different models
 import tensorflow as tf
 from sklearn.metrics import zero_one_loss
 physical_devices = tf.config.list_physical_devices('GPU')

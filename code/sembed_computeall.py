@@ -8,11 +8,7 @@ physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-#read from a file
-#file1 = open("./aclimdb/train/neg/0_3.txt", "r")
-#print(file1.readlines())
-#file1.close()
-#iterate through all files in the neg dir
+
 
 
 '''

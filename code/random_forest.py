@@ -24,12 +24,10 @@ early_stop_callback = EarlyStopping(
     restore_best_weights=True
 )
 
-# Summary of the model structure.
+
 model.fit(inputdata[0:val_size], inputlabel1[0:val_size], validation_data=(inputdata[val_size:], inputlabel1[val_size:]),callbacks = [early_stop_callback])
 model.summary()
 
-# Evaluate the model.
-#model.evaluate(test_ds)
 
 # Export the model to a SavedModel.
 model.save("RANDOM_FOREST")

@@ -1,4 +1,4 @@
-
+#script for mixing the positive and negative data
 import tensorflow as tf
 import random
 
